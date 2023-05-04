@@ -2,16 +2,13 @@
   "name": "Speed",
   "version": "0.1.0",
   "description": "A chrome extension to increase your reading speed by 2x",
-  "permissions": ["storage", "tabs"],
-  "background": {
-    "service_worker": "background.js"
-  },
+  "permissions": ["scripting", "activeTab"],
   "content_scripts": [
     { "matches": ["<all_urls>"], "js": ["contentScript.js"] }
   ],
   "action": {
     "default_title": "Speed",
-    "default_popup": "index.html"
+    "default_popup": "popup.html"
   },
   "manifest_version": 3
 }

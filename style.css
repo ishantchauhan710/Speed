@@ -1,0 +1,103 @@
+@import url(https://fonts.googleapis.com/css?family=Genos);
+@import url(https://fonts.googleapis.com/css?family=Poppins);
+
+:root {
+  --colorPrimary: #083344;
+  --colorOnPrimary: #ffffff;
+  --colorBackground: #f3f4f6;
+  --colorOnBackground: #1f2937;
+  --colorBackgroundVariant: #9ca3af;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  width: 300px;
+  height: 200px;
+  background-color: var(--colorBackground);
+  color: var(--colorOnBackground);
+  font-family: "Poppins";
+}
+
+.header {
+  background-color: var(--colorPrimary);
+  color: var(--colorOnPrimary);
+  padding: 8px 10px;
+  font-size: 2rem;
+  font-weight: 600;
+  font-family: "Genos";
+}
+
+.app {
+  padding: 8px 10px;
+  font-size: 0.92rem;
+}
+
+.app-main {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.toggle {
+  position: relative;
+  display: inline-block;
+  width: 30px;
+  height: 17px;
+}
+
+.toggle input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.toggle-slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: var(--colorBackgroundVariant);
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+.toggle-slider:before {
+  position: absolute;
+  content: "";
+  height: 13px;
+  width: 13px;
+  left: 2px;
+  bottom: 2px;
+  background-color: var(--colorOnPrimary);
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+input:checked + .toggle-slider {
+  background-color: var(--colorPrimary);
+}
+
+input:focus + .toggle-slider {
+  box-shadow: 0 0 1px var(--colorPrimary);
+}
+
+input:checked + .toggle-slider:before {
+  -webkit-transform: translateX(13px);
+  -ms-transform: translateX(13px);
+  transform: translateX(13px);
+}
+
+/* Rounded sliders */
+.toggle-slider.round {
+  border-radius: 34px;
+}
+
+.toggle-slider.round:before {
+  border-radius: 50%;
+}
