@@ -1,9 +1,30 @@
 function enableSpeedMode() {
-  //const title = document.title;
-  //alert(title);
+
+  function formatWord(word, centerCharacter) {
+    const primaryLetters = word.substring(0, centerCharacter);
+    const secondaryLetters = word.substring(centerCharacter, word.length);
+    return `<b>${primaryLetters}</b>${secondaryLetters}`;
+  }
+
   const paragraphs = document.getElementsByTagName("p");
+
   for (let i = 0; i < paragraphs.length; i++) {
-    paragraphs[i].style.color = "red";
+    const paragraph = paragraphs[i].textContent;
+    const words = paragraph.split(/[ \t]+/);
+
+    const formattedWords = words
+      .map((word) => {
+        if (word.length <= 2) {
+          return word;
+        } else if (word.length <= 4) {
+          return formatWord(word, 2);
+        } else {
+          return formatWord(word, 3);
+        }
+      })
+      .join(" ");
+
+    paragraphs[i].innerHTML = formattedWords;
   }
 }
 
