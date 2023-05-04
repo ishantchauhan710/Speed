@@ -1,5 +1,1 @@
-function test() {
-  alert("Hello World");
-}
-
-test();
+console.log("Speed")
