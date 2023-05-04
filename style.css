@@ -57,3 +57,7 @@ body {
   background-color: var(--colorPrimaryHover);
   color: var(--colorOnPrimary);
 }
+
+.mt-sm {
+  margin-top: 10px;
+}
