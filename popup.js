@@ -25,34 +25,108 @@ const enableSpeedMode = () => {
 
     paragraphs[i].innerHTML = formattedWords;
   }
-}
+};
+
+// Font functions
 
 const applyPoppinsFont = () => {
-  alert("Poppins");
+  var link = document.createElement("link");
+  link.setAttribute("rel", "stylesheet");
+  link.setAttribute("type", "text/css");
+  link.setAttribute("href", "https://fonts.googleapis.com/css2?family=Poppins");
+  document.head.appendChild(link);
+
+  const paragraphs = document.getElementsByTagName("p");
+  for (let i = 0; i < paragraphs.length; i++) {
+    paragraphs[i].style.fontFamily = "Poppins";
+  }
 };
 
 const applyRobotoFont = () => {
-  alert("Roboto");
+  var link = document.createElement("link");
+  link.setAttribute("rel", "stylesheet");
+  link.setAttribute("type", "text/css");
+  link.setAttribute("href", "https://fonts.googleapis.com/css2?family=Roboto");
+  document.head.appendChild(link);
+
+  const paragraphs = document.getElementsByTagName("p");
+  for (let i = 0; i < paragraphs.length; i++) {
+    paragraphs[i].style.fontFamily = "Roboto";
+  }
 };
 
 const applyOpenSansFont = () => {
-  alert("Open Sans");
+  var link = document.createElement("link");
+  link.setAttribute("rel", "stylesheet");
+  link.setAttribute("type", "text/css");
+  link.setAttribute(
+    "href",
+    "https://fonts.googleapis.com/css2?family=Open+Sans"
+  );
+  document.head.appendChild(link);
+
+  const paragraphs = document.getElementsByTagName("p");
+  for (let i = 0; i < paragraphs.length; i++) {
+    paragraphs[i].style.fontFamily = "Open Sans";
+  }
 };
 
 const applyMontserratFont = () => {
-  alert("Montserrat");
+  var link = document.createElement("link");
+  link.setAttribute("rel", "stylesheet");
+  link.setAttribute("type", "text/css");
+  link.setAttribute(
+    "href",
+    "https://fonts.googleapis.com/css2?family=Montserrat"
+  );
+  document.head.appendChild(link);
+
+  const paragraphs = document.getElementsByTagName("p");
+  for (let i = 0; i < paragraphs.length; i++) {
+    paragraphs[i].style.fontFamily = "Montserrat";
+  }
 };
 
 const applyLatoFont = () => {
-  alert("Lato");
+  var link = document.createElement("link");
+  link.setAttribute("rel", "stylesheet");
+  link.setAttribute("type", "text/css");
+  link.setAttribute("href", "https://fonts.googleapis.com/css2?family=Lato");
+  document.head.appendChild(link);
+
+  const paragraphs = document.getElementsByTagName("p");
+  for (let i = 0; i < paragraphs.length; i++) {
+    paragraphs[i].style.fontFamily = "Lato";
+  }
 };
 
 const applyMerriweatherFont = () => {
-  alert("Merriweather");
+  var link = document.createElement("link");
+  link.setAttribute("rel", "stylesheet");
+  link.setAttribute("type", "text/css");
+  link.setAttribute(
+    "href",
+    "https://fonts.googleapis.com/css2?family=Merriweather"
+  );
+  document.head.appendChild(link);
+
+  const paragraphs = document.getElementsByTagName("p");
+  for (let i = 0; i < paragraphs.length; i++) {
+    paragraphs[i].style.fontFamily = "Merriweather";
+  }
 };
 
 const applyLexendFont = () => {
-  alert("Lexend");
+  var link = document.createElement("link");
+  link.setAttribute("rel", "stylesheet");
+  link.setAttribute("type", "text/css");
+  link.setAttribute("href", "https://fonts.googleapis.com/css2?family=Lexend");
+  document.head.appendChild(link);
+
+  const paragraphs = document.getElementsByTagName("p");
+  for (let i = 0; i < paragraphs.length; i++) {
+    paragraphs[i].style.fontFamily = "Lexend";
+  }
 };
 
 document.getElementById("btnEnableSpeedMode").addEventListener("click", () => {
