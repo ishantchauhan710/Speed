@@ -6,6 +6,8 @@
 
 Speed is a chrome extension that helps you read much faster! It makes first few letters of words on your web page bold which makes you read them much faster!
 
+Here is a short video about this chrome extension: https://youtube.com/shorts/hkg-vCHtLc0
+
 # Features
 
 ![](screenshots/speed4.png)
