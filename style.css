@@ -2,13 +2,13 @@
 @import url(https://fonts.googleapis.com/css?family=Poppins);
 
 :root {
-  --colorPrimary: #083344;
+  --colorPrimary:#292524;
   --colorOnPrimary: #ffffff;
-  --colorPrimaryHover: #0d4c64;
-  --colorSecondary: #9b5d00;
-  --colorPrimaryDark: #020b0f;
+  --colorPrimaryHover: #44403c;
+  --colorSecondary: #866215;
+  --colorPrimaryDark: #1c1917;
   --colorBackground: #f3f4f6;
-  --colorOnBackground: #1f2937;
+  --colorOnBackground: #292524;
   --colorBackgroundVariant: #9ca3af;
 }
 
@@ -32,8 +32,8 @@ body {
   margin-top: 5px;
 }
 
-.text-primary {
-  color: var(--colorPrimary);
+.text-status {
+  color: #be123c;
 }
 
 .header {
@@ -87,12 +87,13 @@ body {
   margin-bottom: 10px;
 }
 
-a {
+.mail {
   text-decoration: none;
-  color: var(--colorPrimaryHover);
+  color: #083344;
+  cursor: pointer;
 }
 
-a:hover {
+.mail:hover {
   text-decoration: underline;
 }
 
@@ -119,7 +120,7 @@ select {
   padding: 0.25em 0.5em 0.55em 0.5em;
   font-size: 0.95rem;
   cursor: pointer;
-  background-color: #fff;
+  background-color: var(--colorBackground);
   display: grid;
   grid-template-areas: "select";
   grid-area: select;

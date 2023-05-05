@@ -168,6 +168,7 @@ const applyNeutralColor = () => {
 };
 
 document.getElementById("btnEnableSpeedMode").addEventListener("click", () => {
+  document.getElementById("appStatus").style.color = "#166534";
   document.getElementById("appStatus").innerHTML = "On";
 
   chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {

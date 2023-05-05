@@ -2,6 +2,11 @@
   "name": "Speed",
   "version": "0.1.0",
   "description": "A chrome extension to increase your reading speed by 2x",
+  "icons": {
+    "16": "assets/speed_logo_16.png",
+    "48": "assets/speed_logo_48.png",
+    "128": "assets/speed_logo_128.png"
+  },
   "permissions": ["scripting", "activeTab"],
   "content_scripts": [
     { "matches": ["<all_urls>"], "js": ["contentScript.js"] }
