@@ -1,3 +1,4 @@
+// Speed Mode
 const enableSpeedMode = () => {
   const formatWord = (word, centerCharacter) => {
     const primaryLetters = word.substring(0, centerCharacter);
@@ -28,7 +29,6 @@ const enableSpeedMode = () => {
 };
 
 // Font functions
-
 const applyPoppinsFont = () => {
   var link = document.createElement("link");
   link.setAttribute("rel", "stylesheet");
@@ -129,6 +129,42 @@ const applyLexendFont = () => {
   }
 };
 
+// Color functions
+const applySlateColor = () => {
+  const paragraphs = document.getElementsByTagName("p");
+  for (let i = 0; i < paragraphs.length; i++) {
+    paragraphs[i].style.color = "#1e293b";
+  }
+};
+
+const applyGrayColor = () => {
+  const paragraphs = document.getElementsByTagName("p");
+  for (let i = 0; i < paragraphs.length; i++) {
+    paragraphs[i].style.color = "#374151";
+  }
+};
+
+const applyZincColor = () => {
+  const paragraphs = document.getElementsByTagName("p");
+  for (let i = 0; i < paragraphs.length; i++) {
+    paragraphs[i].style.color = "#27272a";
+  }
+};
+
+const applyStoneColor = () => {
+  const paragraphs = document.getElementsByTagName("p");
+  for (let i = 0; i < paragraphs.length; i++) {
+    paragraphs[i].style.color = "#3f3f46";
+  }
+};
+
+const applyNeutralColor = () => {
+  const paragraphs = document.getElementsByTagName("p");
+  for (let i = 0; i < paragraphs.length; i++) {
+    paragraphs[i].style.color = "#404040";
+  }
+};
+
 document.getElementById("btnEnableSpeedMode").addEventListener("click", () => {
   chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
     const tab = tabs[0];
@@ -171,6 +207,36 @@ document.getElementById("fontSelector").addEventListener("change", (e) => {
     chrome.scripting.executeScript({
       target: { tabId: tab.id },
       func: fontFunction,
+    });
+  });
+});
+
+document.getElementById("colorSelector").addEventListener("change", (e) => {
+  const colorChoice = e.target.value;
+  let colorFunction;
+  switch (colorChoice) {
+    case "slate":
+      colorFunction = applySlateColor;
+      break;
+    case "gray":
+      colorFunction = applyGrayColor;
+      break;
+    case "zinc":
+      colorFunction = applyZincColor;
+      break;
+    case "stone":
+      colorFunction = applyStoneColor;
+      break;
+    case "neutral":
+      colorFunction = applyNeutralColor;
+      break;
+  }
+
+  chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
+    const tab = tabs[0];
+    chrome.scripting.executeScript({
+      target: { tabId: tab.id },
+      func: colorFunction,
     });
   });
 });

@@ -6,13 +6,10 @@
   --colorOnPrimary: #ffffff;
   --colorPrimaryHover: #0d4c64;
   --colorPrimaryHoverVariant: #9b5d00;
+  --colorPrimaryDark: #020b0f;
   --colorBackground: #f3f4f6;
   --colorOnBackground: #1f2937;
   --colorBackgroundVariant: #9ca3af;
-
-  --select-border: #777;
-  --select-focus: blue;
-  --select-arrow: var(--select-border);
 }
 
 *,
@@ -78,9 +75,10 @@ body {
   font-size: 0.92rem;
 }
 
-.app-label {
-  margin: 5px 0px;
+.app-item {
+  margin-bottom: 10px;
 }
+
 
 select {
   appearance: none;
@@ -100,7 +98,7 @@ select {
   width: 100%;
   min-width: 15ch;
   max-width: 30ch;
-  border: 1px solid var(--select-border);
+  border: 1px solid var(--colorPrimaryDark);
   border-radius: 0.25em;
   padding: 0.25em 0.5em 0.55em 0.5em;
   font-size: 0.95rem;
@@ -120,7 +118,7 @@ select {
   content: "";
   width: 0.8em;
   height: 0.5em;
-  background-color: var(--select-arrow);
+  background-color: var(--colorPrimaryDark);
   clip-path: polygon(100% 0%, 0 0%, 50% 100%);
   justify-self: end;
   position: absolute;
