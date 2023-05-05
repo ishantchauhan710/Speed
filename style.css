@@ -5,12 +5,19 @@
   --colorPrimary: #083344;
   --colorOnPrimary: #ffffff;
   --colorPrimaryHover: #0d4c64;
+  --colorPrimaryHoverVariant: #9b5d00;
   --colorBackground: #f3f4f6;
   --colorOnBackground: #1f2937;
   --colorBackgroundVariant: #9ca3af;
+
+  --select-border: #777;
+  --select-focus: blue;
+  --select-arrow: var(--select-border);
 }
 
-* {
+*,
+*::before,
+*::after {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -28,9 +35,42 @@ body {
   background-color: var(--colorPrimary);
   color: var(--colorOnPrimary);
   padding: 8px 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header-logo {
   font-size: 2rem;
   font-weight: 600;
   font-family: "Genos";
+}
+
+.header-action {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+#btnEnableSpeedMode {
+  border: none;
+  background-color: var(--colorPrimaryHover);
+  border-radius: 100%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.4s ease;
+}
+
+#btnEnableSpeedMode img {
+  width: 36px;
+  height: 36px;
+}
+
+#btnEnableSpeedMode:hover {
+  background-color: var(--colorPrimaryHoverVariant);
 }
 
 .app {
@@ -38,26 +78,55 @@ body {
   font-size: 0.92rem;
 }
 
-.btn {
+.app-label {
+  margin: 5px 0px;
+}
+
+select {
+  appearance: none;
+  background-color: transparent;
+  border: none;
+  padding: 0 1em 0 0;
+  margin: 0;
   width: 100%;
-  padding: 8px;
-  border-width: 0;
-  border-radius: 2px;
+  font-family: inherit;
+  font-size: inherit;
+  cursor: inherit;
+  line-height: inherit;
   outline: none;
-  transition: background-color 0.3s;
+}
+
+.select {
+  width: 100%;
+  min-width: 15ch;
+  max-width: 30ch;
+  border: 1px solid var(--select-border);
+  border-radius: 0.25em;
+  padding: 0.25em 0.5em 0.55em 0.5em;
+  font-size: 0.95rem;
   cursor: pointer;
+  background-color: #fff;
+  display: grid;
+  grid-template-areas: "select";
+  grid-area: select;
+  align-items: center;
 }
 
-.btn-primary {
-  background-color: var(--colorPrimary);
-  color: var(--colorOnPrimary);
+.select:hover {
+  background-color: rgba(0,0,0,0.05);
 }
 
-.btn-primary:hover {
-  background-color: var(--colorPrimaryHover);
-  color: var(--colorOnPrimary);
+.select::after {
+  content: "";
+  width: 0.8em;
+  height: 0.5em;
+  background-color: var(--select-arrow);
+  clip-path: polygon(100% 0%, 0 0%, 50% 100%);
+  justify-self: end;
+  position: absolute;
+  margin-top: 6px;
 }
 
 .mt-sm {
-  margin-top: 10px;
+  margin-top: 5px;
 }
