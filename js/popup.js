@@ -1,17 +1,22 @@
-// Speed Mode
+// --------------- Speed Mode --------------------
 const enableSpeedMode = () => {
+  // Function to bolden selected number of letters in a word
   const formatWord = (word, centerCharacter) => {
     const primaryLetters = word.substring(0, centerCharacter);
     const secondaryLetters = word.substring(centerCharacter, word.length);
     return `<b>${primaryLetters}</b>${secondaryLetters}`;
   };
 
+  // Get all paragraphs in a web page
   const paragraphs = document.getElementsByTagName("p");
 
   for (let i = 0; i < paragraphs.length; i++) {
     const paragraph = paragraphs[i].textContent;
+
+    // Get words in a paragraph while considering multiple white spaces
     const words = paragraph.split(/[ \t]+/);
 
+    // Apply bold formatting based on word length
     const formattedWords = words
       .map((word) => {
         if (word.length <= 2) {
@@ -26,11 +31,13 @@ const enableSpeedMode = () => {
       })
       .join(" ");
 
+    // Update the DOM
     paragraphs[i].innerHTML = formattedWords;
   }
 };
 
-// Font functions
+// --------------- Font Functions --------------------
+// @Poppins
 const applyPoppinsFont = () => {
   var link = document.createElement("link");
   link.setAttribute("rel", "stylesheet");
@@ -44,6 +51,7 @@ const applyPoppinsFont = () => {
   }
 };
 
+// @Roboto
 const applyRobotoFont = () => {
   var link = document.createElement("link");
   link.setAttribute("rel", "stylesheet");
@@ -57,6 +65,7 @@ const applyRobotoFont = () => {
   }
 };
 
+// @OpenSans
 const applyOpenSansFont = () => {
   var link = document.createElement("link");
   link.setAttribute("rel", "stylesheet");
@@ -73,6 +82,7 @@ const applyOpenSansFont = () => {
   }
 };
 
+// @Montserrat
 const applyMontserratFont = () => {
   var link = document.createElement("link");
   link.setAttribute("rel", "stylesheet");
@@ -89,6 +99,7 @@ const applyMontserratFont = () => {
   }
 };
 
+// @Lato
 const applyLatoFont = () => {
   var link = document.createElement("link");
   link.setAttribute("rel", "stylesheet");
@@ -102,6 +113,7 @@ const applyLatoFont = () => {
   }
 };
 
+// @Merriweather
 const applyMerriweatherFont = () => {
   var link = document.createElement("link");
   link.setAttribute("rel", "stylesheet");
@@ -118,6 +130,7 @@ const applyMerriweatherFont = () => {
   }
 };
 
+// @Lexend
 const applyLexendFont = () => {
   var link = document.createElement("link");
   link.setAttribute("rel", "stylesheet");
@@ -131,7 +144,8 @@ const applyLexendFont = () => {
   }
 };
 
-// Color functions
+// --------------- Color Functions --------------------
+// @Slate
 const applySlateColor = () => {
   const paragraphs = document.getElementsByTagName("p");
   for (let i = 0; i < paragraphs.length; i++) {
@@ -139,6 +153,7 @@ const applySlateColor = () => {
   }
 };
 
+// @Gray
 const applyGrayColor = () => {
   const paragraphs = document.getElementsByTagName("p");
   for (let i = 0; i < paragraphs.length; i++) {
@@ -146,6 +161,7 @@ const applyGrayColor = () => {
   }
 };
 
+// @Zinc
 const applyZincColor = () => {
   const paragraphs = document.getElementsByTagName("p");
   for (let i = 0; i < paragraphs.length; i++) {
@@ -153,6 +169,7 @@ const applyZincColor = () => {
   }
 };
 
+// @Stone
 const applyStoneColor = () => {
   const paragraphs = document.getElementsByTagName("p");
   for (let i = 0; i < paragraphs.length; i++) {
@@ -160,6 +177,7 @@ const applyStoneColor = () => {
   }
 };
 
+// @Neutral
 const applyNeutralColor = () => {
   const paragraphs = document.getElementsByTagName("p");
   for (let i = 0; i < paragraphs.length; i++) {
@@ -167,6 +185,9 @@ const applyNeutralColor = () => {
   }
 };
 
+// --------------- Extension Script Execution Code----------
+
+// Enable Speed Mode
 document.getElementById("btnEnableSpeedMode").addEventListener("click", () => {
   document.getElementById("appStatus").style.color = "#166534";
   document.getElementById("appStatus").innerHTML = "On";
@@ -180,6 +201,7 @@ document.getElementById("btnEnableSpeedMode").addEventListener("click", () => {
   });
 });
 
+// Enable Speed Fonts
 document.getElementById("fontSelector").addEventListener("change", (e) => {
   const fontChoice = e.target.value;
   let fontFunction;
@@ -216,6 +238,7 @@ document.getElementById("fontSelector").addEventListener("change", (e) => {
   });
 });
 
+// Enable Speed Colors
 document.getElementById("colorSelector").addEventListener("change", (e) => {
   const colorChoice = e.target.value;
   let colorFunction;
