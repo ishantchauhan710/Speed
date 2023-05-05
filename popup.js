@@ -18,8 +18,10 @@ const enableSpeedMode = () => {
           return word;
         } else if (word.length <= 4) {
           return formatWord(word, 2);
-        } else {
+        } else if (word.length <= 9) {
           return formatWord(word, 3);
+        } else {
+          return formatWord(word, 4);
         }
       })
       .join(" ");
@@ -166,6 +168,8 @@ const applyNeutralColor = () => {
 };
 
 document.getElementById("btnEnableSpeedMode").addEventListener("click", () => {
+  document.getElementById("appStatus").innerHTML = "On";
+
   chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
     const tab = tabs[0];
     chrome.scripting.executeScript({

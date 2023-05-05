@@ -5,7 +5,7 @@
   --colorPrimary: #083344;
   --colorOnPrimary: #ffffff;
   --colorPrimaryHover: #0d4c64;
-  --colorPrimaryHoverVariant: #9b5d00;
+  --colorSecondary: #9b5d00;
   --colorPrimaryDark: #020b0f;
   --colorBackground: #f3f4f6;
   --colorOnBackground: #1f2937;
@@ -26,6 +26,14 @@ body {
   background-color: var(--colorBackground);
   color: var(--colorOnBackground);
   font-family: "Poppins";
+}
+
+.mt-sm {
+  margin-top: 5px;
+}
+
+.text-primary {
+  color: var(--colorPrimary);
 }
 
 .header {
@@ -67,7 +75,7 @@ body {
 }
 
 #btnEnableSpeedMode:hover {
-  background-color: var(--colorPrimaryHoverVariant);
+  background-color: var(--colorSecondary);
 }
 
 .app {
@@ -79,6 +87,14 @@ body {
   margin-bottom: 10px;
 }
 
+a {
+  text-decoration: none;
+  color: var(--colorPrimaryHover);
+}
+
+a:hover {
+  text-decoration: underline;
+}
 
 select {
   appearance: none;
@@ -111,7 +127,7 @@ select {
 }
 
 .select:hover {
-  background-color: rgba(0,0,0,0.05);
+  background-color: rgba(0, 0, 0, 0.05);
 }
 
 .select::after {
@@ -125,6 +141,15 @@ select {
   margin-top: 6px;
 }
 
-.mt-sm {
-  margin-top: 5px;
+.app-status {
+  font-size: 0.9rem;
+  text-align: center;
+  padding: 0px 0px 5px 0px;
+  color: #262626;
+}
+
+.app-footer {
+  font-size: 0.8rem;
+  text-align: center;
+  color: #404040;
 }
